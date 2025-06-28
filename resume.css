@@ -1,0 +1,134 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.resume-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 40px auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.left {
+  width: 35%;
+  background-color: #002b5b;
+  color: white;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+.right {
+  width: 65%;
+  padding: 30px 40px;
+  box-sizing: border-box;
+}
+
+img#output-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px auto;
+  border: 4px solid #fff;
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+h4 {
+  text-align: center;
+  font-weight: normal;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.left p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.left strong {
+  display: inline-block;
+  width: 80px;
+  color: #ccc;
+}
+
+.left h3 {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.left ul {
+  list-style-type: square;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.right h3 {
+  color: #002b5b;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.right p, .right li {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+#output-experience li {
+  margin-bottom: 15px;
+}
+
+button {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 30px;
+  background-color: #002b5b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #014c8c;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .resume-container {
+    flex-direction: column;
+  }
+
+  .left, .right {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .right {
+    padding: 20px;
+  }
+
+  img#output-photo {
+    margin-bottom: 10px;
+  }
+}

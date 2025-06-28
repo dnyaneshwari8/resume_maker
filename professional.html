@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resume Builder</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .step {
+      display: none;
+    }
+
+    .step.active {
+      display: block;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Resume Builder</h1>
+
+  <form id="resumeForm">
+
+    <!-- Step 1 -->
+    <div class="step active" id="step1">
+      <h2>1. Personal Information</h2>
+
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" placeholder="e.g., John Doe" required />
+
+      <label for="photo">Upload Profile Photo</label>
+      <input type="file" id="photo" accept="image/*" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="e.g., john@example.com" required />
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" placeholder="e.g., +1234567890" />
+
+      <label for="linkedin">LinkedIn Profile</label>
+      <input type="url" id="linkedin" placeholder="e.g., https://linkedin.com/in/johndoe" />
+
+      <label for="location">Location (City & Country)</label>
+      <input type="text" id="location" placeholder="e.g., New York, USA" required />
+
+      <label for="portfolio">Portfolio / GitHub / Website</label>
+      <input type="url" id="portfolio" placeholder="e.g., https://yourwebsite.com" />
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step" id="step2">
+      <h2>2. Professional Summary</h2>
+      <textarea rows="5" placeholder="Write 2–4 lines about your experience and goals..." required></textarea>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step" id="step3">
+      <h2>3. Skills</h2>
+      <textarea rows="5" placeholder="List your technical and soft skills here..." required></textarea>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step" id="step4">
+      <h2>4. Work Experience</h2>
+      <textarea rows="5" placeholder="Include job title, company, dates, achievements..." required></textarea>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step" id="step5">
+      <h2>5. Education</h2>
+      <textarea rows="5" placeholder="Degree, university, graduation year..." required></textarea>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="step" id="step6">
+      <h2>6. Certifications / Licenses</h2>
+      <textarea rows="5" placeholder="Include name, organization, date..." required></textarea>
+    </div>
+
+    <!-- Step 7 -->
+    <div class="step" id="step7">
+      <h2>7. Projects</h2>
+      <textarea rows="5" placeholder="Project title, tools, what you built or achieved..." required></textarea>
+    </div>
+
+    <!-- Step 8 -->
+    <div class="step" id="step8">
+      <h2>8. Languages</h2>
+      <textarea rows="5" placeholder="List languages and your proficiency (e.g., Native, Fluent)..." required></textarea>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="buttons">
+      <button type="button" onclick="prevStep()">Back</button>
+      <button type="button" onclick="nextStep()">Next</button>
+    </div>
+
+  </form>
+
+  <script>
+    let currentStep = 1;
+    const totalSteps = 8;
+
+    function showStep(step) {
+      for (let i = 1; i <= totalSteps; i++) {
+        const stepDiv = document.getElementById(`step${i}`);
+        if (stepDiv) {
+          stepDiv.classList.remove('active');
+        }
+      }
+      const newStep = document.getElementById(`step${step}`);
+      if (newStep) {
+        newStep.classList.add('active');
+      }
+    }
+
+    function nextStep() {
+      if (currentStep < totalSteps) {
+        currentStep++;
+        showStep(currentStep);
+      } else {
+        alert("You have completed the resume form!");
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      showStep(currentStep);
+    });
+  </script>
+</body>
+</html>

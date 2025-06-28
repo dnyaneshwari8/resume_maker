@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Build Your Resume</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <h1>Resume Builder</h1>
+
+  <form id="resumeForm">
+
+    <!-- Step 1 -->
+    <div class="step active" id="step1">
+      <h2>1. Personal Information</h2>
+
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" placeholder="e.g., John Doe" required />
+
+      <label for="photo">Upload Profile Photo</label>
+      <input type="file" id="photo" accept="image/*" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="e.g., john@example.com" required />
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" placeholder="e.g., +1234567890" />
+
+      <label for="linkedin">LinkedIn Profile</label>
+      <input type="url" id="linkedin" placeholder="e.g., https://linkedin.com/in/johndoe" />
+
+      <label for="location">Location (City & Country)</label>
+      <input type="text" id="location" placeholder="e.g., New York, USA" required />
+
+      <label for="portfolio">Portfolio / GitHub / Website</label>
+      <input type="url" id="portfolio" placeholder="e.g., https://yourwebsite.com" />
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step" id="step2">
+      <h2>2. Professional Summary</h2>
+      <textarea rows="5" placeholder="Write 2–4 lines about your experience and goals..." required></textarea>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step" id="step3">
+      <h2>3. Skills</h2>
+      <textarea rows="5" placeholder="List your technical and soft skills here..." required></textarea>
+
+      <!-- Technical Skills -->
+      <div class="skills">
+        <button class="skill-btn" type="button">HTML</button>
+        <button class="skill-btn" type="button">CSS</button>
+        <button class="skill-btn" type="button">JavaScript</button>
+        <button class="skill-btn" type="button">TypeScript</button>
+        <button class="skill-btn" type="button">Python</button>
+        <button class="skill-btn" type="button">Java</button>
+        <button class="skill-btn" type="button">C++</button>
+        <button class="skill-btn" type="button">React</button>
+        <button class="skill-btn" type="button">Angular</button>
+        <button class="skill-btn" type="button">Node.js</button>
+        <button class="skill-btn" type="button">Bootstrap</button>
+        <button class="skill-btn" type="button">Git</button>
+        <button class="skill-btn" type="button">GitHub</button>
+        <button class="skill-btn" type="button">Docker</button>
+        <button class="skill-btn" type="button">MySQL</button>
+        <button class="skill-btn" type="button">MongoDB</button>
+        <button class="skill-btn" type="button">Firebase</button>
+        <button class="skill-btn" type="button">REST APIs</button>
+        <button class="skill-btn" type="button">Postman</button>
+        <button class="skill-btn" type="button">VS Code</button>
+        <button class="skill-btn" type="button">AWS</button>
+        <button class="skill-btn" type="button">Google Cloud</button>
+        <button class="skill-btn" type="button">Azure</button>
+
+        <!-- Soft Skills -->
+        <button class="skill-btn" type="button">Teamwork</button>
+        <button class="skill-btn" type="button">Problem Solving</button>
+        <button class="skill-btn" type="button">Communication</button>
+        <button class="skill-btn" type="button">Time Management</button>
+        <button class="skill-btn" type="button">Adaptability</button>
+        <button class="skill-btn" type="button">Leadership</button>
+        <button class="skill-btn" type="button">Critical Thinking</button>
+        <button class="skill-btn" type="button">Attention to Detail</button>
+        <button class="skill-btn" type="button">Creativity</button>
+        <button class="skill-btn" type="button">Collaboration</button>
+        <button class="skill-btn" type="button">Decision Making</button>
+        <button class="skill-btn" type="button">Organization</button>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step" id="step4">
+      <h2>4. Work Experience</h2>
+      <div id="experience-container">
+        <div class="experience-entry">
+          <label>Job/Internship Title</label>
+          <input type="text" class="job-title" placeholder="e.g., Software Engineer" />
+
+          <label>Company</label>
+          <input type="text" class="company-name" placeholder="e.g., Google" />
+
+          <label>Duration</label>
+          <input type="date" class="duration" placeholder="e.g., Jan 2022 – Present" />
+
+          <label>Description</label>
+          <textarea class="job-desc" placeholder="Achievements, responsibilities..."></textarea>
+        </div>
+      </div>
+      <button type="button" class="add-btn" onclick="addExperience()">+ Add More Experience</button>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step" id="step5">
+      <h2>5. Education</h2>
+      <label>Degree</label>
+      <input type="text" class="degree">
+
+      <label>College Name</label>
+      <input type="text" class="university">
+
+      <label>Graduation Year</label>
+      <input type="date" class="graduation-year">
+    </div>
+
+    <!-- Step 6 -->
+    <div class="step" id="step6">
+      <h2>6. Certifications / Licenses</h2>
+      <label>Name</label>
+      <input type="text" class="name">
+
+      <label>Organization</label>
+      <input type="text" class="organization" placeholder="e.g., Cisco, IBM, Google etc">
+
+      <label>Date</label>
+      <input type="date" class="date">
+    </div>
+
+    <!-- Step 7 -->
+    <div class="step" id="step7">
+      <h2>7. Interests</h2>
+      <textarea rows="5" required></textarea>
+    </div>
+
+    <!-- Step 8 -->
+    <div class="step" id="step8">
+      <h2>8. Projects</h2>
+      <textarea rows="5" placeholder="Project title, tools, what you built or achieved..." required></textarea>
+    </div>
+
+    <!-- Step 9 -->
+    <div class="step" id="step9">
+      <h2>9. Languages</h2>
+      <div id="languages-container">
+        <div class="language-entry">
+          <input type="text" name="language[]" placeholder="Language (e.g., English)" />
+          <select name="level[]">
+            <option value="">Select Level</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="Fluent">Fluent</option>
+            <option value="Native">Native</option>
+          </select>
+        </div>
+      </div>
+      <button type="button" onclick="addLanguage()">+ Add More Languages</button>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="buttons">
+      <button type="button" onclick="prevStep()">Back</button>
+      <button type="button" onclick="nextStep()">Next</button>
+    </div>
+
+  </form>
+
+  <script src="js/builder.js"></script>
+</body>
+</html>

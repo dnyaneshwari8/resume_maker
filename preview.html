@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Preview Resume</title>
+  <link rel="stylesheet" href="css/resume.css" />
+</head>
+<body>
+
+  <div id="resume" class="resume-container">
+    <div class="left">
+      <img id="output-photo" src="" alt="Profile Photo" />
+      <h2 id="output-name"></h2>
+      <h4 id="output-title"></h4>
+
+      <p id="email-section"><strong>Email:</strong> <span id="output-email"></span></p>
+      <p id="phone-section"><strong>Phone:</strong> <span id="output-phone"></span></p>
+      <p id="linkedin-section"><strong>LinkedIn:</strong> <span id="output-linkedin"></span></p>
+      <p id="location-section"><strong>Location:</strong> <span id="output-location"></span></p>
+      <p id="portfolio-section"><strong>Portfolio:</strong> <span id="output-portfolio"></span></p>
+
+      <div id="skills-section">
+        <h3>Skills</h3>
+        <ul id="output-skills"></ul>
+      </div>
+
+      <div id="languages-section">
+        <h3>Languages</h3>
+        <ul id="output-languages"></ul>
+      </div>
+    </div>
+
+    <div class="right">
+      <div id="about-section">
+        <h3>About Me</h3>
+        <p id="output-about"></p>
+      </div>
+
+      <div id="experience-section">
+        <h3>Experience</h3>
+        <ul id="output-experience"></ul>
+      </div>
+
+      <div id="education-section">
+        <h3>Education</h3>
+        <p id="output-education"></p>
+      </div>
+
+      <div id="certifications-section">
+        <h3>Certifications</h3>
+        <ul id="output-certifications"></ul> <!-- Fixed: Changed from <p> to <ul> -->
+      </div>
+
+      <div id="projects-section">
+        <h3>Projects</h3>
+        <ul id="output-projects"></ul> <!-- Fixed: Changed from <p> to <ul> -->
+      </div>
+
+      <div id="interests-section">
+        <h3>Interests</h3>
+        <p id="output-interests"></p>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="downloadPDF()">Download PDF</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="js/preview.js"></script>
+
+</body>
+</html>
